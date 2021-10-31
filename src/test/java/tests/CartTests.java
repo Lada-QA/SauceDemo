@@ -20,7 +20,13 @@ public class CartTests extends BaseTest {
         loginPage.login("standard_user", "secret_sauce");
         productsPage.addProductToCart("Sauce Labs Bolt T-Shirt");
         productsPage.openPage("https://www.saucedemo.com/cart.html");
-        Assert.assertTrue(cartPage.clickButtonCheckout());
+        cartPage.clickButtonCheckout();
+        checkoutPage.setFirstName("Lulu");
+        checkoutPage.setLastName("Dikkens");
+        checkoutPage.setZipCode("12345");
+        checkoutPage.clickContinueButton();
+        Assert.assertEquals(checkoutPage.getUrlProduct("https://www.saucedemo.com/checkout-step-two.html"),
+                "https://www.saucedemo.com/checkout-step-two.html");
     }
 
     @Test
@@ -29,6 +35,7 @@ public class CartTests extends BaseTest {
         loginPage.login("standard_user", "secret_sauce");
         productsPage.addProductToCart("Sauce Labs Bolt T-Shirt");
         productsPage.openPage("https://www.saucedemo.com/cart.html");
-        Assert.assertTrue(cartPage.clickButtonRemove());
+        cartPage.clickButtonRemove();
+        Assert.assertTrue(cartPage.removeProductToCart() < 1);
     }
 }

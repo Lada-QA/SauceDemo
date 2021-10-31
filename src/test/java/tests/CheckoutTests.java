@@ -15,6 +15,7 @@ public class CheckoutTests extends BaseTest {
         checkoutPage.setFirstName("Lulu");
         checkoutPage.setLastName("Dikkens");
         checkoutPage.setZipCode("12345");
-        Assert.assertTrue(checkoutPage.clickContinueButton());
+        checkoutPage.clickContinueButton();
+        Assert.assertTrue(productsPage.productToCartIsDisplayed());
     }
 }
