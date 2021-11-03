@@ -15,7 +15,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    public void errorMessageuUserNameLogin() {
+    public void errorMessageUserNameLogin() {
         loginPage.openPage("https://www.saucedemo.com/");
         loginPage.setUsernameInput("standard_user");
         loginPage.clickLoginButton();

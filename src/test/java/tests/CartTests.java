@@ -25,8 +25,8 @@ public class CartTests extends BaseTest {
         checkoutPage.setLastName("Dikkens");
         checkoutPage.setZipCode("12345");
         checkoutPage.clickContinueButton();
-        Assert.assertEquals(checkoutPage.getUrlProduct("https://www.saucedemo.com/checkout-step-two.html"),
-                "https://www.saucedemo.com/checkout-step-two.html");
+        Assert.assertEquals(("https://www.saucedemo.com/checkout-step-two.html"),
+                checkoutPage.getUrl());
     }
 
     @Test
@@ -36,6 +36,6 @@ public class CartTests extends BaseTest {
         productsPage.addProductToCart("Sauce Labs Bolt T-Shirt");
         productsPage.openPage("https://www.saucedemo.com/cart.html");
         cartPage.clickButtonRemove();
-        Assert.assertTrue(cartPage.removeProductToCart() < 1);
+        Assert.assertTrue(cartPage.removeProductFromCart() < 1);
     }
 }

@@ -9,6 +9,10 @@ public class BasePage {
         this.driver = driver;
     }
 
+    public String getUrl() {
+        return driver.getCurrentUrl();
+    }
+
 
     public void openPage(String url) {
         driver.get(url);

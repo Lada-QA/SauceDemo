@@ -29,7 +29,7 @@ public class CartPage extends BasePage {
         driver.findElement(By.cssSelector(BUTTON_REMOVE)).click();
     }
 
-    public int removeProductToCart() {
+    public int removeProductFromCart() {
         List<WebElement> removeProductList = driver.findElements(By.xpath("//*[contains(text(),'Remove')]"));
         return removeProductList.size();
     }

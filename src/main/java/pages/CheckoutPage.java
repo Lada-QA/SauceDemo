@@ -29,8 +29,4 @@ public class CheckoutPage extends BasePage {
     public void clickContinueButton() {
         driver.findElement(BUTTON_CONTINUE).click();
     }
-
-    public String getUrlProduct(String url) {
-        return driver.getCurrentUrl();
-    }
 }
