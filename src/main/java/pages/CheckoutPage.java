@@ -14,20 +14,23 @@ public class CheckoutPage extends BasePage {
     private static final By ZIP_CODE = By.cssSelector("#postal-code");
     private static final By BUTTON_CONTINUE = By.cssSelector("#continue");
 
-    public void setFirstName(String username) {
+    public CheckoutPage setFirstName(String username) {
         driver.findElement(FIRST_NAME).sendKeys(username);
+        return this;
     }
 
-    public void setLastName(String password) {
+    public CheckoutPage setLastName(String password) {
         driver.findElement(LAST_NAME).sendKeys(password);
+        return this;
     }
 
-    public void setZipCode(String password) {
+    public CheckoutPage setZipCode(String password) {
         driver.findElement(ZIP_CODE).sendKeys(password);
+        return this;
     }
 
-    public boolean clickContinueButton() {
+    public CheckoutPage clickContinueButton() {
         driver.findElement(BUTTON_CONTINUE).click();
-        return true;
+        return this;
     }
 }
