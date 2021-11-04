@@ -10,10 +10,9 @@ public class ProductsPage extends BasePage {
         super(driver);
     }
 
-    private static final String PRODUCTS_PAGE = "https://www.saucedemo.com/cart.html";
+    private static final String PRODUCTS_PAGE = BASE_URL + "/cart.html";
     private static final String PRODUCT_NAME = "//div[@class='inventory_item_name']";
     private static final String ADD_PRODUCT_TO_CART_BUTTON = "//*[text()='%s']/ancestor::*[@class='inventory_item']//button";
-    private static final String PRODUCT_NAME = "//div[@class='inventory_item_name']";
 
     public ProductsPage addProductToCart(String productName) {
         waitForElementLocated(driver.findElement(By.xpath(String.format(ADD_PRODUCT_TO_CART_BUTTON, productName))), 10);
@@ -21,18 +20,14 @@ public class ProductsPage extends BasePage {
         addProductToCartButton.click();
         return this;
     }
-
-    public boolean isProductDisplayedInCart(String productName) {
+            public boolean isProductDisplayedInCart(String productName) {
         return driver.findElement(By.xpath(String.format(PRODUCT_NAME, productName))).isDisplayed();
-    }
 
+    }
 
     public CartPage openPage() {
         openPage(PRODUCTS_PAGE);
         return new CartPage(driver);
     }
 
-    public boolean isProductDisplayedInCart(String productName) {
-        return driver.findElement(By.xpath(String.format(PRODUCT_NAME, productName))).isDisplayed();
-    }
 }

@@ -17,6 +17,6 @@ public class CheckoutTests extends BaseTest {
                 .setZipCode("12345");
         checkoutPage.clickContinueButton();
         Assert.assertTrue(productsPage.isProductDisplayedInCart
-                ("Sauce Labs Bolt T-Shirt"));
+                ("Sauce Labs Bolt T-Shirt"), "Sauce Labs Bolt T-Shirt");
     }
 }
