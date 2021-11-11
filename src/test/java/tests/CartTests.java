@@ -34,7 +34,7 @@ public class CartTests extends BaseTest {
                 .setLastName("Dikkens")
                 .setZipCode("12345");
         checkoutPage.clickContinueButton();
-        Assert.assertEquals(("https://www.saucedemo.com/checkout-step-two.html"),
+        Assert.assertEquals("https://www.saucedemo.com/checkout-step-two.html", ("https://www.saucedemo.com/checkout-step-two.html"),
                 checkoutPage.getUrl());
     }
 
