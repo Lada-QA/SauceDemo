@@ -7,16 +7,17 @@ public class CheckoutTests extends BaseTest {
 
     @Test
     public void checkoutStepOneTest() {
-        loginPage.openPage("https://www.saucedemo.com/");
-        loginPage.login("standard_user", "secret_sauce");
-        productsPage.addProductToCart("Sauce Labs Bolt T-Shirt");
-        productsPage.openPage("https://www.saucedemo.com/cart.html");
-        cartPage.clickButtonCheckout();
-        checkoutPage.setFirstName("Lulu");
-        checkoutPage.setLastName("Dikkens");
-        checkoutPage.setZipCode("12345");
+        loginPage.openPage()
+                .login("standard_user", "secret_sauce")
+                .addProductToCart("Sauce Labs Bolt T-Shirt")
+                .openPage()
+                .clickButtonCheckout()
+                .setFirstName("Lulu")
+                .setLastName("Dikkens")
+                .setZipCode("12345");
         checkoutPage.clickContinueButton();
         Assert.assertTrue(productsPage.isProductDisplayedInCart
-                ("Sauce Labs Bolt T-Shirt"));
+                ("Sauce Labs Bolt T-Shirt"), "Sauce Labs Bolt T-Shirt");
     }
 }
+
