@@ -30,5 +30,4 @@ public class ProductsPage extends BasePage {
         openPage(PRODUCTS_PAGE);
         return new CartPage(driver);
     }
-
 }

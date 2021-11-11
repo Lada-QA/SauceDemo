@@ -34,3 +34,4 @@ public class CheckoutTests extends BaseTest {
         Assert.assertEquals(checkoutPage.getUrl(),"https://www.saucedemo.com/checkout-step-two.html", ("https://www.saucedemo.com/checkout-step-two.html"));
     }
 }
+
