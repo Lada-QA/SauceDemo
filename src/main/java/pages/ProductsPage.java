@@ -20,7 +20,8 @@ public class ProductsPage extends BasePage {
         addProductToCartButton.click();
         return this;
     }
-            public boolean isProductDisplayedInCart(String productName) {
+
+    public boolean isProductDisplayedInCart(String productName) {
         return driver.findElement(By.xpath(String.format(PRODUCT_NAME, productName))).isDisplayed();
 
     }

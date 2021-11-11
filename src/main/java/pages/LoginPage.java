@@ -12,7 +12,7 @@ public class LoginPage extends BasePage {
     private static final By USERNAME_INPUT = By.xpath("//*[@id='user-name']");
     private static final By PASSWORD_INPUT = By.xpath("//*[@id='password']");
     private static final By LOGIN_BUTTON = By.xpath("//*[@id='login-button']");
-    private static final By ERROR_MESSAGE = By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]");
+    private static final By ERROR_MESSAGE = By.xpath(("//div[@class='error-message-container error']"));
 
     public ProductsPage login(String username, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(username);
