@@ -20,3 +20,4 @@ public class CheckoutTests extends BaseTest {
                 ("Sauce Labs Bolt T-Shirt"), "Sauce Labs Bolt T-Shirt");
     }
 }
+
