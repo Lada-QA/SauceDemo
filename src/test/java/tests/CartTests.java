@@ -24,21 +24,6 @@ public class CartTests extends BaseTest {
     }
 
     @Test
-    public void checkOutProductToCartTest () {
-        loginPage.openPage()
-                .login(System.getProperty("username"), System.getProperty("password"))
-                .addProductToCart("Sauce Labs Bolt T-Shirt")
-                .openPage()
-                .clickButtonCheckout()
-                .setFirstName("Lulu")
-                .setLastName("Dikkens")
-                .setZipCode("12345");
-        checkoutPage.clickContinueButton();
-        Assert.assertEquals("https://www.saucedemo.com/checkout-step-two.html", ("https://www.saucedemo.com/checkout-step-two.html"),
-                checkoutPage.getUrl());
-    }
-
-    @Test
     public void removeProductToCartTest() {
         loginPage.openPage()
                 .login("standard_user", "secret_sauce")
