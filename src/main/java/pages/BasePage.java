@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -25,6 +26,7 @@ public class BasePage {
     }
 
 
+    @Step("Opening URL: '{url}'")
     public void openPage(String url) {
         driver.get(url);
         waitForPageLoaded();

@@ -8,8 +8,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import pages.*;
 
-import java.util.concurrent.TimeUnit;
-
 @Listeners(TestListener.class)
 public class BaseTest {
     WebDriver driver;

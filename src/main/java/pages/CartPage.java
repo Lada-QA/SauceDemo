@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,11 +25,13 @@ public class CartPage extends BasePage {
 
     }
 
+    @Step("click button checkout and switching to the Checkout page")
     public CheckoutPage clickButtonCheckout() {
         driver.findElement(By.cssSelector(BUTTON_CHECKOUT)).click();
         return new CheckoutPage(driver);
     }
 
+    @Step("click button Remove and remove an item from the shopping cart")
     public void clickButtonRemove() {
         driver.findElement(By.cssSelector(BUTTON_REMOVE)).click();
     }
