@@ -24,7 +24,7 @@ public class CartTests extends BaseTest {
     @Test
     public void checkOutProductToCartTest () {
         loginPage.openPage()
-                .login(System.getProperty("username"), System.getProperty("password"))
+                .login(System.getenv("username"), System.getenv("password"))
                 .addProductToCart("Sauce Labs Bolt T-Shirt")
                 .openPage()
                 .clickButtonCheckout()
