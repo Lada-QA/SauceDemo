@@ -1,11 +1,14 @@
 package tests;
 
+import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CheckoutTests extends BaseTest {
 
     @Test
+    @Description("Registration on webSite, add product to cart, filling in the verification fields, " +
+            "is product displayed in cart")
     public void checkoutStepOneTest() {
         loginPage.openPage()
                 .login("standard_user", "secret_sauce")
@@ -18,6 +21,22 @@ public class CheckoutTests extends BaseTest {
         checkoutPage.clickContinueButton();
         Assert.assertTrue(productsPage.isProductDisplayedInCart
                 ("Sauce Labs Bolt T-Shirt"), "Sauce Labs Bolt T-Shirt");
+    }
+
+    @Test
+    @Description("Registration on webSite, add product to cart, filling in the verification fields, " +
+            "checkoutPage get URL")
+    public void checkOutProductToCartTest () {
+        loginPage.openPage()
+                .login(System.getProperty("username"), System.getProperty("password"))
+                .addProductToCart("Sauce Labs Bolt T-Shirt")
+                .openPage()
+                .clickButtonCheckout()
+                .setFirstName("Lulu")
+                .setLastName("Dikkens")
+                .setZipCode("12345");
+        checkoutPage.clickContinueButton();
+        Assert.assertEquals(checkoutPage.getUrl(),"https://www.saucedemo.com/checkout-step-two.html", ("https://www.saucedemo.com/checkout-step-two.html"));
     }
 }
 

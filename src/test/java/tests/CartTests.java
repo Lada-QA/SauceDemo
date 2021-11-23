@@ -7,9 +7,7 @@ public class CartTests extends BaseTest {
 
     @Test(dataProvider = "User data", dataProviderClass = DataProviderTest.class, retryAnalyzer = Retry.class)
     public void addProductToCartTest(String userName, String password, String productName, String expectedPrice) {
-        loginPage.openPage()
-                .login(userName, password)
-                .addProductToCart(productName);
+        productSteps.loginAndAddProductToCart(userName, password, productName);
         cartPage.openPage();
         Assert.assertEquals(cartPage.getProductPrice(productName), expectedPrice);
     }
