@@ -2,6 +2,7 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.PropertyReader;
 
 public class CartTests extends BaseTest {
 
@@ -24,7 +25,7 @@ public class CartTests extends BaseTest {
     @Test
     public void checkOutProductToCartTest () {
         loginPage.openPage()
-                .login(System.getenv("username"), System.getenv("password"))
+                .login(System.getenv().getOrDefault("username", PropertyReader.getProperty("username")), System.getenv().getOrDefault("password", PropertyReader.getProperty("password")))
                 .addProductToCart("Sauce Labs Bolt T-Shirt")
                 .openPage()
                 .clickButtonCheckout()
