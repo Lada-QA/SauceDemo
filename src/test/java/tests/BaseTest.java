@@ -10,8 +10,6 @@ import org.testng.annotations.Listeners;
 import pages.*;
 import steps.ProductSteps;
 
-import java.util.concurrent.TimeUnit;
-
 @Listeners(TestListener.class)
 public class BaseTest {
     WebDriver driver;

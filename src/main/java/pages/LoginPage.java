@@ -15,7 +15,6 @@ public class LoginPage extends BasePage {
     private static final By LOGIN_BUTTON = By.xpath("//*[@id='login-button']");
     private static final By ERROR_MESSAGE = By.xpath(("//div[@class='error-message-container error']"));
 
-   @Step("Login as username: '{username'} with password:, '{password}")
     public ProductsPage login(String username, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(username);
         driver.findElement(PASSWORD_INPUT).sendKeys(password);

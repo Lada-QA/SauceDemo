@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.PropertyReader;
@@ -7,6 +8,7 @@ import utils.PropertyReader;
 public class CartTests extends BaseTest {
 
     @Test(dataProvider = "User data", dataProviderClass = DataProviderTest.class, retryAnalyzer = Retry.class)
+    @Description("Add product to cart")
     public void addProductToCartTest(String userName, String password, String productName, String expectedPrice) {
         productSteps.loginAndAddProductToCart(userName, password, productName);
         cartPage.openPage();
@@ -14,6 +16,7 @@ public class CartTests extends BaseTest {
     }
 
     @Test
+    @Description("Add product to cart with page Factory")
     public void addProductToCartWithPageFactoryTest() {
         loginPageFactory.openPage();
         loginPageFactory.login("standard_user", "secret_sauce");
@@ -22,7 +25,7 @@ public class CartTests extends BaseTest {
         Assert.assertEquals(cartPage.getProductPrice("Sauce Labs Bolt T-Shirt"), "$15.99");
     }
 
-    @Test
+   
     public void checkOutProductToCartTest () {
         loginPage.openPage()
                 .login(System.getProperty("username", PropertyReader.getProperty("username")),

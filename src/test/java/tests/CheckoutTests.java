@@ -24,8 +24,6 @@ public class CheckoutTests extends BaseTest {
     }
 
     @Test
-    @Description("Registration on webSite, add product to cart, filling in the verification fields, " +
-            "checkoutPage get URL")
     public void checkOutProductToCartTest () {
         loginPage.openPage()
                 .login(System.getProperty("username"), System.getProperty("password"))
