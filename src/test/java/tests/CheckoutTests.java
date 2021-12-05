@@ -1,11 +1,14 @@
 package tests;
 
+import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CheckoutTests extends BaseTest {
 
     @Test
+    @Description("Registration on webSite, add product to cart, filling in the verification fields, " +
+            "is product displayed in cart")
     public void checkoutStepOneTest() {
         loginPage.openPage()
                 .login("standard_user", "secret_sauce")
