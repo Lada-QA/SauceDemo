@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class LoginTests extends BaseTest {
 
     @Test
-    @Description("Get an error message when filling in one field - '{password}'")
+    @Description("Get an error message when filling in one field")
     public void errorMessagePasswordLoginTest() {
         loginPage.openPage()
                 .setPasswordInput("secret_sauce");
@@ -16,7 +16,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    @Description("Get an error message when filling in one field - '{username}'")
+    @Description("Get an error message when filling in one field")
     public void errorMessageUserNameLoginTest() {
         loginPage.openPage()
                 .setUsernameInput("standard_user");

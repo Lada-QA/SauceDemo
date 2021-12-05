@@ -15,25 +15,25 @@ public class CheckoutPage extends BasePage {
     private static final By ZIP_CODE = By.cssSelector("#postal-code");
     private static final By BUTTON_CONTINUE = By.cssSelector("#continue");
 
-    @Step("Set '{firstName}' input")
+    @Step("Set '{firstName}' in FirstName input")
     public CheckoutPage setFirstName(String username) {
         driver.findElement(FIRST_NAME).sendKeys(username);
         return this;
     }
 
-    @Step("Set '{lastName}' input")
+    @Step("Set '{lastName}' in lastName input")
     public CheckoutPage setLastName(String password) {
         driver.findElement(LAST_NAME).sendKeys(password);
         return this;
     }
 
-    @Step("Ser '{ZIPCode}'")
+    @Step("Ser '{ZIPCode}' in ZIPCode input")
     public CheckoutPage setZipCode(String password) {
         driver.findElement(ZIP_CODE).sendKeys(password);
         return this;
     }
 
-    @Step("Click button '{continue}'")
+    @Step("Click button 'continue'")
     public CheckoutPage clickContinueButton() {
         driver.findElement(BUTTON_CONTINUE).click();
         return this;

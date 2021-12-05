@@ -25,7 +25,7 @@ public class CartPage extends BasePage {
 
     }
 
-    @Step("click button checkout and switching to the Checkout page")
+    @Step("click button checkout")
     public CheckoutPage clickButtonCheckout() {
         driver.findElement(By.cssSelector(BUTTON_CHECKOUT)).click();
         return new CheckoutPage(driver);
